@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 400 90">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3 {
+        fill: none;
+      }
+
+      .cls-1, .cls-2, .cls-4 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1, .cls-3, .cls-4 {
+        stroke-width: .2px;
+      }
+
+      .cls-1, .cls-4 {
+        stroke: #fff;
+      }
+
+      .cls-5, .cls-6 {
+        isolation: isolate;
+      }
+
+      .cls-2 {
+        stroke: #000;
+      }
+
+      .cls-6 {
+        fill: #000;
+        font-family: Calibri, Calibri;
+        font-size: 23.8px;
+      }
+
+      .cls-3 {
+        stroke: #c2bc6c;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .cls-4 {
+        fill: #dad7a7;
+      }
+
+      .cls-7 {
+        fill: #fff67f;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <rect class="cls-2" x="13.5" y="9" width="373" height="72" rx="11.7" ry="11.7"/>
+  <g class="cls-5">
+    <text class="cls-6" transform="translate(183.8 50.3)"><tspan x="0" y="0">Sobre de Robótica</tspan></text>
+  </g>
+  <g>
+    <rect class="cls-7" x="37.9" y="22.5" width="37" height="45" rx=".8" ry=".8" transform="translate(-15.5 39.1) rotate(-33.9)"/>
+    <polyline class="cls-3" points="28.8 36.7 47.8 32.2 59.4 16.5"/>
+    <rect class="cls-1" x="56.2" y="29.2" width="3" height="35.1" transform="translate(-16.3 40.1) rotate(-33.9)"/>
+    <circle class="cls-4" cx="47.9" cy="32.2" r="1.5"/>
+    <circle class="cls-4" cx="67.5" cy="61.3" r="1.5"/>
+  </g>
+</svg>

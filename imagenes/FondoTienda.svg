@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 896">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#Degradado_sin_nombre_26);
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #b7afaf;
+      }
+
+      .cls-3 {
+        fill: #867878;
+      }
+    </style>
+    <linearGradient id="Degradado_sin_nombre_26" data-name="Degradado sin nombre 26" x1="960" y1="1078" x2="960" y2="182" gradientTransform="translate(0 -182)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9c9696" stop-opacity="0"/>
+      <stop offset="1" stop-color="#9c9696" stop-opacity=".4"/>
+    </linearGradient>
+  </defs>
+  <polygon class="cls-3" points="-1.1 111.9 -1.1 678.9 81.2 653.6 210.2 696.6 230.2 825.6 361.2 809.6 409.2 838.6 490.2 838.6 590.2 887.6 729.2 775.6 818.2 875.6 932.2 808.6 1051.2 846.6 1177.2 796.6 1283.2 835.6 1369.2 825.6 1406.2 844.6 1520.2 802.6 1643.2 844.6 1693.2 765.6 1848.2 755.6 1848.2 678.9 1896.2 655.6 1916.2 448 1921 0 -1 0 -1.1 111.9"/>
+  <polygon class="cls-2" points="-.2 410.2 -1.1 0 1920.9 0 1921.1 428 1879.9 598 1794.9 710 1759.9 791 1659.9 829 1564.9 806 1456.9 856 1396.9 806 1269.9 773 1157.9 827 1065.9 802 922.9 841 837.9 820 691.9 841 590.9 791 513.9 810 436.9 785 328.9 832 305.9 788 225.9 770 145.9 665 53.9 626 -.2 410.2"/>
+  <rect class="cls-1" x="-1" width="1922" height="896"/>
+</svg>

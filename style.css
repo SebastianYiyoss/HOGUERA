@@ -1,0 +1,1012 @@
+*{margin: 0; padding: 0;}
+
+html{scroll-behavior: smooth;}
+
+@font-face{font-family: franklinMarca; src: url('./fuentes/Franklin\ Gothic\ Demi\ Cond.ttf');}
+@font-face{font-family: calibriMarca; src: url('./fuentes/calibri.ttf');}
+
+body{display: flex; flex-direction: column; align-items: center;}
+.scaleCero{scale: 0;}
+.opacityCero{opacity: 0; transition: ease .5s;}
+.opacityUno{opacity: 1; transition: ease .5s;}
+.pointer{cursor: pointer;}
+.blur{
+    backdrop-filter: blur(.2vh); width: 100%; height: 100vh;
+    background-color: rgba(0, 0, 0, 0.178);
+    position: fixed; top: 0; z-index: 3;
+}
+.zDex{z-index: 4 !important;}
+.zDexPlus{z-index: 100;}
+.none{display: none;}
+.noneEase{display: none; transition: ease .5s;}
+.headerContainer{
+    width: 100%; height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    background: url(./imagenes/FondoHeader.svg); background-repeat: no-repeat;
+    background-position: left; background-size: cover; overflow: hidden; position: relative;
+
+    animation: headerFondo infinite linear 100s;
+}
+@keyframes headerFondo{100%{background-position: right;}}
+header{
+    width: 100%; height: 10vh; margin-top: 2vh;
+    display: flex; gap: 60%; justify-content: center; align-items: center;
+    position: fixed; top: 0; z-index: 2;
+}
+.headerFirst{
+    width: 20%;
+    display: flex; gap: 2vh; align-items: center; justify-content: center;
+    background-color: white; padding: 1vh;
+    border: solid .3vh; border-radius: 1vh; box-shadow: 0 0 1vh rgba(0, 0, 0, 0.13);
+}
+.headerFirst img{width: 30%;}
+.headerFirst h3{
+    font-family: 'franklinMarca'; text-align: center;
+    background-color: black; color: white;
+    padding: 1vh; border-radius: 1vh;
+    cursor: pointer;
+}
+.morral{
+    position: fixed;
+    width: 2.5%; top: 13%; left: 5%;
+    background-color: white; padding: 1vh;
+    border: solid .3vh; border-radius: 1vh; box-shadow: 0 0 1vh rgba(0, 0, 0, 0.13);
+    cursor: pointer; z-index: 2;
+}
+.cosasMorral{
+    position: fixed;
+    background-color: white;
+    width: 20%; height: 60vh;
+    left: 10%; top: 13%;
+    text-align: center; padding: 2vh; gap: 5%;
+    border: solid .3vh; border-radius: 1vh; box-shadow: 0 0 1vh rgba(0, 0, 0, 0.13);
+}
+.cosasMorral h2{font-family: franklinMarca; margin-top: 5%; margin-bottom: 5%;}
+.cosasMorral p{font-family: calibriMarca; opacity: .5; margin-top: 5%;}
+.itemMorral{cursor: pointer;}
+.headerSecond{
+    width: 10%;
+    display: flex; align-items: center; justify-content: center;
+    background-color: white; padding: 1vh;
+    border: solid .3vh; border-radius: 1vh; box-shadow: 0 0 1vh rgba(0, 0, 0, 0.13); color: rgba(0, 0, 0, 0.507);
+    transition: ease .5s;
+}
+.headerSecond h3{
+    font-family: 'franklinMarca'; text-align: center;
+    border-radius: 1vh;
+}
+.headerSecond img{display: none; width: 100%; cursor: pointer;}
+.headerSecond:hover{color: black; transition: ease .5s; display: flex; padding: 1vh;}
+.hoverHeaderSecond{width: 100%; height: 3vh;}
+.vacioOne{width: 10%; height: 4vh; position: absolute; top: 60%;}
+.contentList{
+    position: absolute; top: 100%; right: 4.4%;
+    padding: 4vh; background-color: white;
+    border: solid .3vh rgba(0, 0, 0, 0.507); border-radius: 1vh; box-shadow: 0 0 1vh rgba(0, 0, 0, 0.13);
+    transition: ease .5s;
+}
+.contentList a{transition: ease .5s; text-decoration: none; color: rgba(0, 0, 0, 0.514);}
+.contentList a:hover{color: black; transition: ease .5s;}
+.contentList:hover{border: solid .3vh black; transition: ease .5s;}
+.contentListAct{display: flex; flex-direction: column; gap: 2vh; font-family: calibriMarca; color: rgba(0, 0, 0, 0.507);}
+.hoguera{width: 45%;}
+.conejoHeader{
+    width: 14vh; position: absolute; right: -30%;
+    animation: infinite conejoHeader 45s ease-in-out;
+}
+@keyframes conejoHeader{
+    39.9%{transform: translateY(0vh) rotate(0deg);}
+    40%{transform: translateY(-10vh) rotate(10deg); right: -30%;}
+    60%{transform: translateY(10vh) rotate(0deg);}
+    80%{right: 110%; transform: translateY(-10vh) rotate(10deg);}
+    100%{right: 110%; rotate: -5deg;}
+}
+.grilloHeader{
+    width: 6vh; position: absolute; right: -30%; top: 60%;
+    animation: infinite grilloHeader 35s ease-in-out;
+}
+@keyframes grilloHeader{
+    39.9%{transform: translateY(0vh) rotate(0deg);}
+    40%{transform: translateY(10vh) rotate(-10deg); right: -30%;}
+    60%{transform: translateY(-10vh) rotate(0deg);}
+    80%{right: 110%; transform: translateY(10vh) rotate(-10deg);}
+    100%{right: 110%; rotate: 5deg;}
+}
+.botellaHeader{
+    width: 10vh; position: absolute; right: -30%; top: 20%;
+    animation: infinite botellaHeader 55s ease-in-out;
+    cursor: pointer;
+}
+@keyframes botellaHeader{
+    39.9%{transform: translateY(0vh) rotate(0deg);}
+    40%{transform: translateY(-10vh) rotate(-10deg); right: -30%;}
+    60%{transform: translateY(10vh) rotate(0deg);}
+    80%{right: 110%; transform: translateY(-10vh) rotate(-10deg);}
+    100%{right: 110%; rotate: 5deg;}
+}
+.ballenaHeader{
+    width: 140vh; position: absolute; right: -100%; top: 0;
+    animation: forwards ballenaHeader 20s ease-in-out;
+}
+@keyframes ballenaHeader{
+    5.9%{transform: translateY(0vh) rotate(0deg);}
+    6%{transform: translateY(-10vh) rotate(5deg); right: -100%;}
+    40%{transform: translateY(5vh) rotate(-3deg);}
+    95%{right: 110%; transform: translateY(-5vh) rotate(5deg);}
+    100%{right: 110%; rotate: 0deg;}
+}
+.infoProyecto{
+    display: flex; justify-content: end; gap: 15%; align-items: center; position: absolute; left: -8%;
+    background-color: rgb(189, 189, 189); color: black;
+    padding: 2.5vh; border-radius: 0 2vh 2vh 0;
+    font-family: calibriMarca;
+    width: 20%;
+    transition: ease .5s;
+}
+.infoProyecto img{width: 17%;}
+.infoProyecto p{width: 60%;}
+.infoProyecto:hover{left: 0; transition: ease .5s; background-color: white; color: green;}
+.cartaHeader{
+    position: fixed;
+    width: 100vh;
+}
+.cartaHeader img{width: 100%;}
+.permitirBoton{
+    width: 20%; height: 6vh; position: absolute;
+    bottom: 15%; left: 10%;
+    cursor: pointer;
+}
+.negarBoton{
+    width: 16%; height: 6vh; position: absolute;
+    bottom: 15%; left: 38%;
+    cursor: pointer;
+}
+.linternaActivador{
+    position: fixed; top: 3.7%; left: 26%; width: 3%;
+    padding: 1vh; background-color: white;
+    border: solid .3vh rgb(0, 0, 0); border-radius: 1vh; box-shadow: 0 0 1vh rgba(0, 0, 0, 0.13);
+    cursor: pointer; transition: ease .5s;
+}
+.linternaActivador img{width: 100%; transform: translateY(.3vh) translateX(.2vh);}
+.violeta{
+    width: 100%; height: 100%; background-color: rgba(128, 0, 255, 0.384);
+    z-index: 6; position: fixed; top: 0; pointer-events: none;
+}
+.sectionIntroduccion{
+    width: 100%; height: 100vh; z-index: 0;
+    background-color: rgb(144, 144, 144);
+    display: flex; justify-content: center; align-items: center; flex-direction: column;
+    position: relative;
+}
+.arañaConLinterna{width: 20vh; transform-origin: top; animation: arañaIntro infinite alternate ease 2s;}
+@keyframes arañaIntro{0%{rotate: 10deg;} 100%{rotate: -10deg;}}
+.itemIntroduccion{
+    width: 30%; height: 40vh;
+    background-color: rgb(247, 247, 247);
+    display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center;
+    gap: 10%; padding: 5vh; border-radius: 1vh; box-shadow: 0 0 1vh rgba(0, 0, 0, 0.13);
+}
+.itemIntroduccion h1{font-family: franklinMarca;}
+.textBeI{font-family: calibriMarca; width: 90%; color: rgb(53, 52, 52);}
+.textByD{font-family: franklinMarca;}
+.arañaSinRaton{
+    position: absolute; background-color: rgba(255, 255, 255, 0.575);
+    padding: 1vh; border-radius: 1vh; font-family: calibriMarca;
+    bottom: 25%; color: rgb(66, 65, 65);
+}
+.arañaSinRatonMensaje{animation: arañaSinRatonOne 6s ease;}
+@keyframes arañaSinRatonOne {0%{opacity: 0;} 10%{opacity: 1;}90%{opacity: 1;}100%{opacity: 0;}}
+.luzVioletaGrab{position: fixed; width: 90vh; top: 15%;}
+.grabItem{animation: 6s grabItem ease;}
+@keyframes grabItem {0%{scale: 0;}10%{scale: 100%;}20%{scale: 95%;}30%{scale: 100%;}40%{scale: 95%;}50%{scale: 100%;}60%{scale: 95%;}70%{scale: 100%;}80%{scale: 95%;}90%{scale: 100%;}100%{scale: 0%;}}
+.sectionPichBook{
+    width: 100%; height: 100vh; gap: 10%;
+    background: url(./imagenes/FondoPich.svg); background-position: center;
+    background-repeat: no-repeat; background-size: cover;
+    display: flex; justify-content: center; align-items: center; flex-direction: column;
+}
+.sectionPichBook h1{font-family: franklinMarca;}
+.containerItemsPichBook{
+    display: flex; width: 100%;
+    align-items: center; justify-content: center; gap: 10%;
+}
+.itemPichBook{
+    display: flex; width: 35%;
+    align-items: center; justify-content: center; gap: 5%;
+    background-color: rgb(224, 217, 207); padding: 2vh;
+    border-radius: 1vh; box-shadow: 0 0 1vh rgba(0, 0, 0, 0.13);
+}
+.itemPichBookDow{
+    display: flex; width: 35%; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 2vh;
+}
+.itemPichBookDow a{
+    text-decoration: none;
+    font-family: franklinMarca; margin-top: 2%; font-size: 4vh;
+    color: rgb(231, 226, 220);
+    background-color: rgb(138, 122, 99); padding: 2vh;
+    width: 60%; height: 10vh;
+    text-align: center; margin: 0; border-radius: 1vh;
+    box-shadow: 0 0 1vh rgba(0, 0, 0, 0.13);
+    display: flex; align-items: center; justify-content: center;
+    animation: descargarPich ease infinite 3s alternate;
+    transition: ease .5s;
+    cursor: pointer;
+}
+@keyframes descargarPich{50%{opacity: .8;}}
+.itemPichBookDow a:hover{scale: 105%; transition: ease .5s;}
+.itemPichBook img{width: 20%; border-radius: 1vh;}
+.itemPichBook h3{font-family: franklinMarca; color: rgb(115, 99, 87);}
+.itemPichBook p{font-family: calibriMarca; margin-top: 2%; font-size: 2.3vh; color: rgb(104, 93, 82)}
+.sectionTeaser{
+    width: 100%; height: 100vh; gap: 5%;
+    background: url(./imagenes/FondoTeaser.svg); background-position: center;
+    background-repeat: no-repeat; background-size: cover;
+    display: flex; justify-content: center; align-items: center; text-align: center; flex-direction: column;
+}
+.sectionTeaser h1{font-family: franklinMarca; color: rgb(70, 70, 70);}
+.sectionTeaser video{
+    width: 50%; height: 59vh; background-color: black;
+    border-radius: 1vh; box-shadow: 0 0 1vh rgba(0, 0, 0, 0.13);
+    border: solid .3vh;
+}
+.sectionVientos{
+    width: 100%; height: 70vh; position: relative;
+    background: url(./imagenes/FondoViento.svg); background-position: left;
+    background-repeat: no-repeat; background-size: cover;
+    animation: viento infinite linear 20s;
+    overflow: hidden;
+}
+.ratonGrab{position: fixed; width: 90vh; top: 20%;}
+@keyframes viento{100%{background-position: right;}}
+.sectionVientos img{position: absolute;}
+.ardillaViento{
+    width: 9vh; top: 30%; right: -50%;
+    animation: ardilla infinite ease-in-out 20s;
+}
+@keyframes ardilla{
+    20.9%{top: 30%; right: -50%;}
+    30%{top: 30%; right: -50%;}
+    60%{top: 50%; rotate: -10deg;}
+    90%{top: 10%; right: 150%; rotate: 0deg;}
+    100%{top: 20%; right: 150%;}
+}
+.globo8Viento{
+    width: 9vh; top: 30%; right: -50%;
+    animation: globo8 infinite ease-in-out 16s;
+}
+@keyframes globo8{
+    20.9%{top: 30%; right: -50%;}
+    30%{top: 30%; right: -50%;}
+    60%{top: 50%; rotate: -10deg;}
+    90%{top: 10%; right: 150%; rotate: 0deg;}
+    100%{top: 20%; right: 150%;}
+}
+.globo1Viento{
+    width: 10vh; top: 30%; right: -50%;
+    animation: globo1 infinite ease-in-out 10s;
+}
+@keyframes globo1{
+    20.9%{top: 30%; right: -50%;}
+    30%{top: 30%; right: -50%; rotate: 10deg;}
+    60%{top: 50%; rotate: -5deg;}
+    90%{top: 10%; right: 150%; rotate: 0deg;}
+    100%{top: 20%; right: 150%;}
+}
+.focaViento{
+    width: 30vh; position: absolute; right: -50%; top: 10%;
+    animation: infinite foca 55s ease-in-out;
+}
+@keyframes foca{
+    39.9%{transform: translateY(0vh) rotate(0deg);}
+    40%{transform: translateY(0vh) rotate(-10deg); right: -50%;}
+    60%{transform: translateY(3vh) rotate(0deg);}
+    80%{right: 110%; transform: translateY(5vh) rotate(-5deg);}
+    100%{right: 110%; rotate: 5deg;}
+}
+.globo7Viento{
+    width: 13vh; position: absolute; right: -30%; top: 10%;
+    animation: infinite globo7 45s ease-in-out;
+}
+@keyframes globo7{
+    39.9%{transform: translateY(0vh) rotate(0deg);}
+    40%{transform: translateY(0vh) rotate(-10deg); right: -30%;}
+    60%{transform: translateY(3vh) rotate(0deg);}
+    80%{right: 110%; transform: translateY(5vh) rotate(-5deg);}
+    100%{right: 110%; rotate: 5deg;}
+}
+.globo6Viento{
+    width: 9vh; top: 0%; right: -50%;
+    animation: globo6 infinite ease-in-out 10s;
+}
+@keyframes globo6{
+    20.9%{top: 0%; right: -50%;}
+    30%{top: 0%; right: -50%; rotate: 10deg;}
+    60%{top: 20%; rotate: -5deg;}
+    90%{top: 40%; right: 150%; rotate: 0deg;}
+    100%{top: 20%; right: 150%;}
+}
+.globo5Viento{
+    width: 12vh; top: 0%; right: -50%;
+    animation: globo5 infinite ease-in-out 24s;
+}
+@keyframes globo5{
+    20.9%{top: 0%; right: -50%;}
+    30%{top: 0%; right: -50%; rotate: 10deg;}
+    60%{top: 20%; rotate: -5deg;}
+    90%{top: 40%; right: 150%; rotate: 0deg;}
+    100%{top: 20%; right: 150%;}
+}
+.lagartijaViento{
+    width: 14vh; position: absolute; right: -30%;
+    animation: infinite lagartija 30s ease-in-out;
+}
+@keyframes lagartija{
+    39.9%{transform: translateY(0vh) rotate(0deg);}
+    40%{transform: translateY(-10vh) rotate(10deg); right: -30%;}
+    60%{transform: translateY(10vh) rotate(0deg);}
+    80%{right: 110%; transform: translateY(-10vh) rotate(10deg);}
+    100%{right: 110%; rotate: -5deg;}
+}
+.conejoViento{
+    width: 14vh; top: 30%; right: -50%;
+    animation: conejo infinite ease-in-out 15s;
+}
+@keyframes conejo{
+    1.9%{top: 30%; right: -50%;}
+    30%{top: 30%; right: -50%; rotate: 10deg;}
+    80%{top: 10%; rotate: -5deg;}
+    100%{top: 50%; right: 150%; rotate: 0deg;}
+}
+.globo2Viento{
+    width: 16vh; top: 30%; right: -50%;
+    animation: globo2 infinite ease-in-out 20s;
+}
+@keyframes globo2{
+    1.9%{top: 30%; right: -50%;}
+    30%{top: 30%; right: -50%; rotate: 10deg;}
+    80%{top: 10%; rotate: -10deg;}
+    100%{top: 5%; right: 150%; rotate: 0deg;}
+}
+.pezViento{
+    width: 7vh; top: 30%; right: -50%;
+    animation: pez infinite ease-in-out 30s;
+}
+@keyframes pez{
+    20.9%{top: 30%; right: -50%;}
+    30%{top: 30%; right: -50%;}
+    60%{top: 50%; rotate: -10deg;}
+    90%{top: 10%; right: 150%; rotate: 0deg;}
+    100%{top: 20%; right: 150%;}
+}
+.globo3Viento{
+    width: 7vh; top: 30%; right: -50%;
+    animation: globo3 infinite ease-in-out 20s;
+}
+.grilloViento{
+    width: 7vh; position: absolute; right: -30%; top: 60%;
+    animation: infinite grillo 35s ease-in-out;
+}
+@keyframes grillo{
+    39.9%{transform: translateY(0vh) rotate(0deg);}
+    40%{transform: translateY(10vh) rotate(-10deg); right: -30%;}
+    60%{transform: translateY(-10vh) rotate(0deg);}
+    80%{right: 110%; transform: translateY(10vh) rotate(-10deg);}
+    100%{right: 110%; rotate: 5deg;}
+}
+@keyframes globo3{
+    10.9%{top: 30%; right: -50%;}
+    40%{top: 20%; right: -50%;}
+    60%{top: 30%; rotate: -10deg;}
+    80%{top: 10%; right: 150%; rotate: 0deg;}
+    100%{top: 20%; right: 150%;}
+}
+.gatoViento{
+    width: 12vh; top: 30%; right: -50%;
+    animation: gato infinite ease-in-out 35s;
+}
+@keyframes gato{
+    20.9%{top: 10%; right: -50%;}
+    30%{top: 30%; right: -50%;}
+    60%{top: 10%; rotate: -10deg;}
+    90%{top: 30%; right: 150%; rotate: 0deg;}
+    100%{top: 20%; right: 150%;}
+}
+.gusanoViento{
+    width: 5vh; top: 30%; right: -50%;
+    animation: gusano infinite ease-in-out 40s;
+}
+@keyframes gusano{
+    20.9%{top: 10%; right: -50%;}
+    30%{top: 30%; right: -50%;}
+    60%{top: 10%; rotate: -10deg;}
+    90%{top: 30%; right: 150%; rotate: 0deg;}
+    100%{top: 20%; right: 150%;}
+}
+.cabraViento{
+    width: 25vh; top:5%; right: -50%;
+    animation: cabra infinite ease-in-out 40s;
+}
+@keyframes cabra{
+    20.9%{top: 5%; right: -50%;}
+    50%{top: -5%; right: -50%;}
+    70%{top: 5%; rotate: -10deg;}
+    100%{top: 30%; right: 150%; rotate: 10deg;}
+}
+.perroViento{
+    width: 20vh; top: 30%; right: -50%;
+    animation: perro infinite ease-in-out 15s;
+}
+@keyframes perro{
+    10.9%{top: 25%; right: -50%;}
+    50%{top: 20%; right: -50%;}
+    80%{top: 30%; rotate: -10deg;}
+    100%{top: 10%; right: 150%; rotate: 0deg;}
+}
+.globo10Viento{
+    width: 18vh; top: 0%; right: -50%;
+    animation: globo10 infinite ease-in-out 27s;
+}
+@keyframes globo10{
+    10.9%{top: 0%; right: -50%;}
+    50%{top: 0%; right: -50%;}
+    80%{top: 10%; rotate: -10deg;}
+    100%{top: 10%; right: 150%; rotate: 0deg;}
+}
+.globo4Viento{
+    width: 8vh; top: 5%; right: -50%;
+    animation: globo4 infinite ease-in-out 10s;
+}
+@keyframes globo4{
+    10.9%{top: 5%; right: -50%;}
+    50%{top: 20%; right: -50%;}
+    80%{top: 50%; rotate: -10deg;}
+    100%{top: 10%; right: 150%; rotate: 0deg;}
+}
+.globo9Viento{ /* raton */
+    width: 7vh; top: 5%; right: -50%; cursor: pointer;
+    animation: globo9 infinite ease-in-out 38s;
+}
+@keyframes globo9{
+    5.9%{top: 5%; right: -50%;}
+    40%{top: 20%; right: -50%;}
+    80%{top: 50%; rotate: -10deg;}
+    100%{top: 10%; right: 150%; rotate: 0deg;}
+}
+.superposicionViento{
+    position: absolute; width: 100%; height: 100vh;
+    background: url(./imagenes/FondoViento.svg); background-position: left;
+    background-repeat: no-repeat; background-size: cover;
+    animation: infinite linear fondoVientoTwo 10s;
+    pointer-events: none;
+}
+@keyframes fondoVientoTwo {100%{background-position: right}}
+.sectionComic{
+    width: 100%; height: 100vh; gap: 5%;
+    display: flex; align-items: center; text-align: center;
+    flex-direction: column; position: relative;
+}
+.sectionComicFondoOne{
+    background: url(./imagenes/FondoComic.svg);
+    background-repeat: no-repeat; background-size: cover;
+}
+.sectionComicFondoTwo{
+    background: url(./imagenes/FondoComicTwo.svg);
+    background-repeat: no-repeat; background-size: cover;
+}
+.sectionComicFondoThree{
+    background: url(./imagenes/FondoComicThree.svg);
+    background-repeat: no-repeat; background-size: cover;
+}
+.sectionComic h1{font-family: franklinMarca; margin-top: 6%;}
+.containerDatasComic{
+    background-color: rgb(184, 182, 182); width: 70%; padding: 2vh;
+    display: flex; justify-content: center; align-items: center;
+    gap: 2%; border-radius: 1vh; box-shadow: 0 0 1vh rgba(0, 0, 0, 0.13);
+}
+.sliderPosters{
+    width: 58vh; height: 50vh;
+    overflow: hidden; position: relative;
+    border-radius: 1vh; 
+}
+.postersComic{
+    width: 300%; display: flex; position: relative;
+    transition: ease .5s;
+}
+.posterComic:hover{background-position: right; transition: ease 2s;}
+.backPoster{
+    background: url(./imagenes/PosterComic.svg);
+    background-repeat: no-repeat; background-size: cover;
+    transition: ease 2s; position: relative;
+    background-position: left; width: 100%; height: 50vh; display: block;
+}
+.backPoster2{
+    background: url(./imagenes/posterComicTwo.svg);
+    background-repeat: no-repeat; background-size: cover;
+    transition: ease 2s; position: relative;
+    background-position: left; width: 100%; height: 50vh;
+}
+.backPoster3{
+    background: url(./imagenes/posterComicThree.svg);
+    background-repeat: no-repeat; background-size: cover;
+    transition: ease 2s; position: relative;
+    background-position: left; width: 100%; height: 50vh;
+}
+.backPoster3 img{width: 10%; position: absolute; right: -50%; top: 5%; cursor: pointer; transition: ease 2s;}
+.posterComic:hover img{right: 5%; transition: ease 2s;}
+.botonAntes{width: 2.5%; left: 13%;}
+.botonPasar{width: 2.5%; left: 42%;}
+.botonPoster{transition: ease .5s;}
+.botonPoster:hover{transition: ease .5s; scale: 110%; cursor: pointer; opacity: .6;}
+.datasComic{
+    width: 60%; height: 44vh; background-color: white; padding: 3vh;
+    display: flex; gap: 3vh; flex-direction: column; text-align: start;
+    border-radius: 1vh; box-shadow: 0 0 1vh rgba(0, 0, 0, 0.13);
+}
+.datasComic p{font-family: calibriMarca; color: gray;}
+.datasComic a{
+    text-decoration: none; font-family: franklinMarca;
+    background-color: rgb(42, 59, 42); color: white;
+    width: 50%; text-align: center;
+    padding: 2vh; border-radius: 1vh;
+}
+.datasComic img{width: 35%;}
+.sobreSecreto{
+    width: 70vh; position: fixed; top: 11%;
+}
+.cerrarSobre{
+    width: 10%; height: 8vh;
+    position: absolute; top: 0; right: 0; cursor: pointer;
+}
+.selectCajaFuerte{
+    width: 15vh; height: 15vh; position: absolute;
+    bottom: 0; left: 37vh; cursor: pointer;
+}
+.cajaFuerte{
+    position: fixed; top: 0;
+    width: 169vh; height: 100vh;
+}
+.cajaFuerteMode{position: absolute; left: 24%; bottom: 0; width: 50%;}
+.cajaFuerteModeTwo{position: absolute; left: 24%; bottom: 0; width: 100%;}
+.cajaFuerte input{
+    position: absolute; top: 58%; width: 13%; left: 41.1%;
+    font-size: 7vh; border-radius: 3vh; border: solid rgba(128, 128, 128, 0.205);
+    text-align: center; font-family: monospace;
+}
+.enterCode{
+    width: 15%; height: 6%;
+    cursor: pointer;
+    position: absolute; border-radius: 500vh; top: 70%; left: 40.5%;
+}
+.animationIncorrectCode{animation: incorrect ease .3s;}
+@keyframes incorrect {
+    0%{transform: translateX(0); color: black; border: solid rgba(128, 128, 128, 0.205)}
+    25%{transform: translateX(-5%); color: red; border: solid rgba(255, 0, 0, 0.664)}
+    50%{transform: translateX(0); color: red; border: solid rgba(255, 0, 0, 0.664)}
+    75%{transform: translateX(5%); color: red; border: solid rgb(255, 0, 0)}
+    100%{transform: translateX(0); color: black; border: solid rgba(128, 128, 128, 0.205)}
+}
+.desSelectCajaFuerte{height: 8%; cursor: pointer;}
+.desSelectCajaFuerteModeOne{position: absolute; top: 31%; right: 35%;  width: 4%;}
+.desSelectCajaFuerteModeTwo{position: absolute; top: 31%; right: 59%;  width: 4%;}
+.globoTimeBlock{
+    width: 10vh; height: 8vh;
+    position: absolute; bottom: 14.7%; left: 40vh;
+    background: url(./imagenes/globoTiempoBlock.svg); background-position: center;
+    background-size: cover; background-repeat: no-repeat;
+    font-family: calibriMarca; color: gray;
+}
+.globoTimeBlock p{margin-top: 21%;}
+.containerCartaSecreta{
+    width: 100%; height: 60vh;
+    position: fixed; top: 13%;
+}
+.cartaSecreta{width:70vh;}
+.recogerCartaCajaFuerte{
+    width: 20%; height: 30vh; cursor: pointer;
+    position: absolute; bottom: 13%; left: 33%;
+}
+.cerrarCartaSecreta{
+    width: 3%; cursor: pointer;
+    position: absolute; top: -5%;
+}
+.sectionPersonajes{
+    width: 100%; height: 100vh;
+    background: url(./imagenes/FondoPersonajes.svg); background-position: center;
+    background-size: cover; background-repeat: no-repeat; position: relative;
+    display: flex; flex-direction: column; align-items: center; justify-content: start;
+}
+@keyframes oscTitileo {100%{opacity: 0;}}
+.sectionPersonajes p{font-family: calibriMarca; margin-top: 1vh; color: rgb(102, 102, 102);}
+.sectionPersonajes h1{font-family: franklinMarca; margin-top: 20vh; color: rgb(80, 70, 58);}
+.kyleSelectAnim{
+    width: 28%;
+    display: flex; justify-content: center; align-items: end;
+    position: absolute; bottom: 3%; left: 8%;
+}
+.kyleSelect{z-index: 1; width: 25%; height: 80%; position: absolute; cursor: pointer;}
+.nameKyle{
+    position: absolute; font-family: franklinMarca;
+    top: -2%; left: 3vh; color: rgb(85, 84, 84);
+    opacity: 0; transition: ease .5s;
+}
+.kyleSelect:hover h2{opacity: 1; transition: ease .5s;}
+.jimboSelectAnim{
+    width: 28%;
+    display: flex; justify-content: center; align-items: end;
+    position: absolute; bottom: 3%; left: 20%;
+}
+.jimboSelect{z-index: 1; width: 25%; height: 80%; position: absolute; cursor: pointer;}
+.nameJimbo{
+    position: absolute; font-family: franklinMarca;
+    top: -12%; left: 3vh; color: rgb(56, 62, 139);
+    opacity: 0; transition: ease .5s;
+}
+.jimboSelect:hover h2{opacity: 1; transition: ease .5s;}
+.maggieSelectAnim{
+    width: 20%;
+    display: flex; justify-content: center; align-items: end;
+    position: absolute; bottom: 3%; left: 36%;
+}
+.maggieSelect{z-index: 1; width: 25%; height: 80%; position: absolute; cursor: pointer;}
+.nameMaggie{
+    position: absolute; font-family: franklinMarca;
+    top: -20%; left: -1vh; color: rgb(139, 56, 56);
+    opacity: 0; transition: ease .5s;
+}
+.maggieSelect:hover h2{opacity: 1; transition: ease .5s;}
+.alimSelectAnim{
+    width: 23%;
+    display: flex; justify-content: center; align-items: end;
+    position: absolute; bottom: 3%; left: 46%;
+}
+.alimSelect{z-index: 1; width: 25%; height: 80%; position: absolute; cursor: pointer;}
+.nameAlim{
+    position: absolute; font-family: franklinMarca;
+    top: -10%; left: 2.2vh; color: rgb(56, 139, 74);
+    opacity: 0; transition: ease .5s;
+}
+.alimSelect:hover h2{opacity: 1; transition: ease .5s;}
+.petaloSelectAnim{
+    width: 20%;
+    display: flex; justify-content: center; align-items: end;
+    position: absolute; bottom: 10%; right: 15%;
+    animation: petaloLevita infinite alternate-reverse 1s ease-in-out;
+}
+@keyframes petaloLevita {
+    100%{transform: translateY(3%);}
+}
+.petaloSelect{z-index: 1; width: 25%; height: 95%; position: absolute; cursor: pointer;}
+.namePetalo{
+    position: absolute; font-family: franklinMarca;
+    top: -10%; left: 0; color: rgb(255, 255, 255);
+    opacity: 0; transition: ease .5s;
+}
+.opacityOscPetalo{opacity: .8;}
+.selectPetaloOsc{
+    width: 100%; height: 100vh;
+    background-color: rgb(0, 0, 0);
+    position: absolute; box-shadow: 0 0 5vh 5vh rgb(0, 0, 0);
+    pointer-events: none; top: 0; left: 0;
+    transition: ease .5s;
+}
+.petaloSelect:hover h2{opacity: 1; transition: ease .5s;}
+.datasPersonaje{
+    width: 100%; height: 100vh;
+    position: fixed; top: 0; left: 0;
+    display: flex; align-items: center; justify-content: center;
+}
+.fichaDatas{width: 110vh;}
+.cerrarDatas{width: 8vh; margin-bottom: 54vh; cursor: pointer;}
+.filaPersonajes{display: flex; width: 100%; justify-content: space-evenly; align-items: center;}
+.personajeMovile{
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    background-color: rgb(219, 202, 176); width: 30%;
+    padding: 2vh; border-radius: 2vh; box-shadow: 0 0 1vh rgba(0, 0, 0, 0.13);
+    transition: ease .5s;
+}
+.personajeMovile h2{font-family: franklinMarca;}
+.personajeMovile img{width: 100%;}
+.personajeMovile p{
+    background-color: rgb(99, 90, 66);
+    padding: 1vh; width: 83%; text-align: center; border-radius: 1vh;
+    cursor: pointer; color: white;
+}
+.personajeMovile:hover{scale: 105%; transition: ease .5s;}
+.personajeMovilePetalo{
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    background-color: rgb(0, 0, 0); width: 40%;
+    padding: 2vh; border-radius: 2vh; box-shadow: 0 0 1vh rgba(0, 0, 0, 0.13);
+    transition: ease .5s;
+}
+.personajeMovilePetalo h2{font-family: franklinMarca; color: white;}
+.personajeMovilePetalo img{width: 100%;}
+.personajeMovilePetalo p{
+    background-color: rgb(54, 54, 54);
+    padding: 1vh; width: 83%; text-align: center; border-radius: 1vh;
+    cursor: pointer; color: white;
+}
+.personajeMovilePetalo:hover{scale: 105%; transition: ease .5s;}
+.personajesMovile{
+    display: none; flex-direction: column; gap: 5%;
+    justify-content: center; align-items: center;
+    margin-top: 20vh;
+}
+.sectionTienda{
+    width: 100%; height: 100vh; flex-direction: column;
+    background: url(./imagenes/FondoTienda.svg); background-position: top;
+    background-repeat: no-repeat; background-size: cover;
+    display: flex; justify-content: start; align-items: center;
+}
+.sectionTienda h1{font-family: franklinMarca; margin-top: 5vh; color: white;}
+.clickeaTienda{font-family: calibriMarca; margin-bottom: 5vh; color: rgba(255, 255, 255, 0.568);}
+.contenedorItemsTienda{
+    width: 70%; display: flex; flex-direction: column;
+    gap: 5%; height: 50vh; background-color: white;
+    justify-content: center; align-items: center;
+    padding: 2vh; border-radius: 2vh; box-shadow: 0 0 1vh rgba(0, 0, 0, 0.13);
+}
+.itemsTienda{width: 100%; display: flex; justify-content: space-evenly; align-items: center;}
+.itemTienda{
+    width: 27%; display: flex; gap: 5%; background-color: rgb(180, 167, 149);
+    padding: 2vh; border-radius: 2vh; box-shadow: 0 0 1vh rgba(0, 0, 0, 0.13);
+    position: relative; transition: ease .5s; cursor: pointer;
+}
+.itemTienda:hover{scale: 105%; transition: ease .5s;}
+.itemTienda:hover .sellos{scale: 108%; rotate: 7deg; transition: ease .5s;}
+.itemTienda h3{font-family: franklinMarca; color: rgb(68, 63, 55);}
+.itemTienda p{font-family: calibriMarca; color: rgb(255, 255, 255);}
+.imagenItemTienda{width: 35%; height: 18vh; border-radius: 2vh;}
+.imagenItemTienda:hover{background-size: 130%;}
+.kyle3D{
+    background: url(./imagenes/kyle3D.png); background-position: top;
+    background-size: cover; background-repeat: no-repeat;
+}
+.maggie3D{
+    background: url(./imagenes/maggie3D.png); background-position: top;
+    background-size: cover; background-repeat: no-repeat;
+}
+.petalo3D{
+    background: url(./imagenes/petalo3D.png); background-position: top;
+    background-size: cover; background-repeat: no-repeat;
+}
+.gorra{
+    background: url(./imagenes/gorra.png); background-position: top;
+    background-size: cover; background-repeat: no-repeat;
+}
+.camisa{
+    background: url(./imagenes/camisa.png); background-position: top;
+    background-size: cover; background-repeat: no-repeat;
+}
+.pendon{
+    background: url(./imagenes/pendon.png); background-position: center;
+    background-size: cover; background-repeat: no-repeat;
+}
+.sellos{width: 25%; position: absolute; right: 5%; bottom: 5%; transition: ease .5s;}
+.raro{animation: raro infinite alternate linear 2s;}
+@keyframes raro {100%{color: purple;}}
+.especial{animation: especial infinite alternate linear 10s;}
+@keyframes especial {
+    0%{color: white;}
+    10%{color: green;}
+    20%{color: purple;}
+    30%{color: yellow;}
+    40%{color: blue;}
+    50%{color: orangered;}
+    60%{color: plum;}
+    70%{color: red;}
+    80%{color: brown;}
+    90%{color: orange;}
+    100%{color: black;}
+}
+.dataItemTiendaPlus{
+    display: flex; justify-content: center; align-items: center;
+    width: 100%; height: 100vh; position: fixed; top: 0; left: 0;
+    gap: 1vh;
+}
+.imagenDataPlus{width: 45vh;}
+.cerrarDataPlus{width: 6vh; position: relative; margin-bottom: 78vh; cursor: pointer;}
+.imagenDataPlusTwo{width: 90vh;}
+.cerrarDataPlusTwo{width: 6vh; position: relative; margin-bottom: 78vh; cursor: pointer;}
+.botonPedirTienda{
+    width: 50%; padding: 2vh; border-radius: 2vh; font-family: franklinMarca;
+    background-color: rgb(255, 255, 255); color: rgb(0, 47, 255); margin-top: 5vh;
+    text-decoration: none; text-align: center; transition: ease .5s;
+}
+.botonPedirTienda:hover{background-color: rgb(217, 227, 255); transition: ease .5s;}
+footer{
+    width: 100%; height: 100vh;
+    background: url(./imagenes/FondoFooter.svg); background-position: center;
+    background-size: cover; background-repeat: no-repeat; position: relative;
+    display: flex; justify-content: center; align-items: center;
+}
+.sectionFooter{
+    pointer-events: none;
+    width: 100%; height: 100vh; display: flex; justify-content: center; align-items: end;
+    background: url(./imagenes/FondoFooterSuper.svg); background-position: center;
+    background-size: cover; background-repeat: no-repeat; position: absolute;
+    top: 0; left: 0;
+}
+.logoFooter{width: 60vh;}
+.itemsFooter{
+    pointer-events: all;
+    width: 100%; margin-bottom: 3vh; padding: 0 5vh 0 5vh;
+    display: flex; justify-content: space-evenly; align-items: end;
+}
+.itemFooter p{font-family: calibriMarca; color: rgb(199, 178, 153);}
+.infoFooter{font-family: calibriMarca; color: rgb(199, 178, 153); width: 30%; margin-bottom: 20vh;}
+.itemFooterTwo{
+    display: flex; flex-direction: column;
+    margin-bottom: 5vh; width: 20%; gap: 2vh;
+    justify-content: center; align-items: center;
+}
+.itemFooterTwo img{width: 20vh;}
+.sapoCode{width: 15vh; position: relative;}
+.sapoCodeSale{animation: sapoSale forwards ease-in-out 2s,
+    sapoLevita infinite ease-in-out 2s alternate;}
+@keyframes sapoSale {
+    100%{margin-top: -60vh;}
+}
+@keyframes sapoLevita {
+    100%{transform: translateY(3vh);}
+}
+.code{
+    display: flex; justify-content: center; align-items: center;
+    position: fixed; top: 0; left: 0;
+    width: 100%; height: 100vh;
+}
+.imagenCode{width: 100vh;}
+.cerrarCode{width: 8vh; margin-bottom: 40vh; cursor: pointer;}
+
+@media screen and (max-width:1024px){
+    .contenedorItemsTienda{width: 90%;}
+    .datasComic p{font-size: 2.5vh;}
+    .cerrarDatas{width: 6vh;}
+    .fichaDatas{width: 100vh;}
+    .namePetalo{left: -15%;}
+    .nameAlim{left: 5%;}
+    .nameMaggie{left: -18%;}
+    .nameJimbo{left: 7%;}
+    .nameKyle{left: 3%;}
+    .selectPetaloOsc{height: 90vh;}
+    .sectionPersonajes{height: 90vh;}
+    .containerDatasComic{width: 90%;}
+    .linternaActivador{left: 47.5%; top: 4.5%;}
+    .sectionTeaser video{width: 70%; height: 51vh;}
+    .sectionPichBook{height: 156vh; gap: 5.5%;}
+    .containerItemsPichBook{flex-direction: column; width: 70%;}
+    .itemPichBook{width: 100%; height: 20vh;}
+    .itemPichBook img{width: 13%;}
+    .cosasMorral{width: 30%;}
+    .itemIntroduccion{width: 50%;}
+    header{gap: 57%;}
+    .headerFirst{width: 30%; }
+    .hoguera{width: 60%;}
+    .hoverHeaderSecond h3{display: none;}
+    .headerSecond img{display: block;}
+    .headerSecond{padding: 0; width: 5%; background-color: transparent; border: none; box-shadow: none;}
+    .vacioOne{display: none;}
+    .headerSecond:hover{padding: 0;}
+    .contentList{
+        right: 5%; top: 100%;
+    }
+    .headerContainer{flex-direction: column-reverse; gap: 5vh;}
+    .infoProyecto{
+        background-color: white;
+        position: static;
+        width: 50%;
+        border-radius: 2vh;
+    }
+    .infoProyecto p{width: 70%;}
+}
+
+@media screen and (max-width:720px){
+    .item
+    .cerrarCode{width: 6vh; margin-bottom: 30vh;}
+    .imagenCode{width: 60vh;}
+    .itemsFooter{flex-direction: column; justify-content: center; align-items: start; gap: 2vh;}
+    .infoFooter{margin-bottom: 0; width: 80%;}
+    .itemFooterTwo{margin-bottom: 0;}
+    .sectionFooter{height: 130vh;}
+    footer{height: 130vh;}
+    .itemFooterTwo img{width: 15vh;}
+    .logoFooter{width: 30vh;}
+    .cerrarDataPlusTwo{margin-bottom: 50vh;}
+    .imagenDataPlusTwo{width: 60vh;}
+    .contenedorItemsTienda{height: 155vh; justify-content: space-evenly; align-items: center; gap: 2%;}
+    .sectionTienda{height: 220vh;}
+    .itemTienda{width: 90%;}
+    .itemsTienda{flex-direction: column; justify-content: center; align-items: center; gap: 5%; width: 100%;}
+    .cerrarDatas{width: 5vh; position: relative; margin-left: -5vh;}
+    .fichaDatas{width: 70vh;}
+    .itemPichBookDow{width: 80%;}
+    .itemPichBook p{font-size: 2vh;}
+    .textBeI{font-size: 2.5vh;}
+    .personajesMovile{display: flex;}
+    .sectionPersonajes h1{margin-top: 30vh;}
+    .selectPetaloOsc{height: 220vh;}
+    .sectionPersonajes{height: 220vh;}
+    .personajes{display: none;}
+    .globoTimeBlock{top: 81%; left: 42.5vh;}
+    .arañaSinRaton{width: 80%; text-align: center;}
+    .cerrarCartaSecreta{right: 3%; width: 5%;}
+    .selectCajaFuerte{width: 20vh; height: 15%;}
+    .sectionComic{height: 160vh; background-position: 9%;}
+    .sectionComic p{font-size: 2.3vh;}
+    .datasComic{position: absolute; top: 50%; width: 87%; align-items: center; text-align: center;}
+    .botonPasar{top: 41%; width: 5vh;}
+    .botonAntes{top: 41%; width: 5vh;}
+    .sliderPosters{width: 49vh;}
+    .cajaFuerte input{top: 65%; font-size: 6vh;}
+    .enterCode{top: 75%; height: 5vh;}
+    .desSelectCajaFuerte{top: 42%;}
+    .cajaFuerte{width: 140vh;}
+    .cartaSecreta{width: 70vh; top: 20%;}
+    .sobreSecreto{width: 55vh; top: 20%;}
+    .linternaActivador{left: 70%; top: 3.7%; width: 7%;}
+    .morral{left: 7%;}
+    .sectionTeaser{height: 70vh;}
+    .sectionTeaser video{width: 90%; height: 38vh;}
+    .sectionPichBook{gap: 5%; height: 150vh;}
+    .containerItemsPichBook{flex-direction: column; width: 90%;}
+    .itemPichBook{width: 100%;}
+    .cosasMorral{width: 60%; left: 20%; top: 15%;}
+    .morral{width: 7%; top: 15%;}
+    .itemIntroduccion{width: 70%;}
+    header{gap: 20%;}
+    .headerFirst{width: 60%;}
+    .hoverHeaderSecond h3{display: none;}
+    .headerSecond img{display: block;}
+    .headerSecond{padding: 0; width: 7%; background-color: transparent; border: none; box-shadow: none; color: black;}
+    .vacioOne{display: none;}
+    .headerSecond:hover{padding: 0;}
+    .contentList{
+        right: 5%; top: 140%;
+        scale: 120%;
+    }
+    .headerContainer{flex-direction: column-reverse; gap: 5vh;}
+    .hoguera{width: 80%;}
+    .infoProyecto{
+        background-color: white;
+        position: static;
+        width: 50%;
+        border-radius: 2vh;
+    }
+    .infoProyecto p{width: 70%;}
+    .botellaHeader{display: none;}
+}
+
+@media screen and (max-width:350px){
+    .cerrarCode{width: 6vh; margin-bottom: 30vh;}
+    .imagenCode{width: 48vh;}
+    .logoFooter{width: 20vh;}
+    footer{height: 150vh;}
+    .sectionFooter{height: 150vh;}
+    .itemFooterTwo img{width: 20vh; margin-left: 7vh;}
+    .imagenDataPlusTwo{width: 48vh;}
+    .clickeaTienda{text-align: center; width: 70%;}
+    .cerrarDatas{margin-bottom: 37vh;}
+    .fichaDatas{width: 55vh;}
+    .enterCode{top: 82%; height: 4vh;}
+    .cajaFuerte input{top: 75%; font-size: 4vh; width: 12.5vh; border-radius: 2vh;}
+    .desSelectCajaFuerte{top: 60%;}
+    .cajaFuerte{width: 100vh;}
+    .selectPetaloOsc{height: 200vh;}
+    .sectionPersonajes{height: 200vh;}
+    .ratonGrab{width: 60vh;}
+    .luzVioletaGrab{width: 60vh;}
+    .cartaSecreta{width: 50vh;}
+    .datasComic{width: 70%;}
+    .sectionTeaser video{height: 29vh;}
+    header{gap: 5%;}
+    .textBeI{font-size: 2vh;}
+    .linternaActivador{left: 7%; top: 20%;}
+    .infoProyecto{width: 80%;}
+    .cosasMorral{top: 12%; left: 20%; width: 53%;}
+    .morral{top: 12%;}
+    .headerFirst{width: 70%;}
+    .headerFirst h3{font-size: 2.5vh;}
+}
