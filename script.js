@@ -89,13 +89,12 @@ function abrirCartaHeader() {
     header.classList.remove('zDex')
     morral.classList.remove('zDex')
     cartaHeader.classList.add('zDex')
-    blur.classList.remove('none')
-    abrirCarta.play()
     cartaBety.classList.remove('none')
     textoMorral.classList.add('none')
     cosasMorral.classList.add('none')
     morral.addEventListener('click', abrirMorral)
     morral.removeEventListener('click', cerrarMorral)
+    blur.classList.remove('none')
 }
 negarBoton.addEventListener('click', negarBotonH)
 function negarBotonH() {
@@ -103,7 +102,6 @@ function negarBotonH() {
     header.classList.add('zDex')
     morral.classList.add('zDex')
     blur.classList.add('none')
-    cerrarCarta.play()
 }
 permitirBoton.addEventListener('click', permitirBotonH)
 function permitirBotonH() {
