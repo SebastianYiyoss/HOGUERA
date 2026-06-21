@@ -21,6 +21,7 @@ body{display: flex; flex-direction: column; align-items: center;}
 header{
     margin-top: 2.5vh; display: flex; position: fixed;
     justify-content: center; align-items: center; height: 10vh; gap: 47%;
+    z-index: 1;
 }
 .itemOneHeader{display: flex; gap: 2vh; width: 30%;}
 .headerFirst{
@@ -100,10 +101,11 @@ header{
     justify-content: center; align-items: center;
 }
 .itemFooterTwo img{width: 20vh;}
-.clickRevista{width: 8%; position: absolute; top: 70%; left: 12vh; animation: infinite alternate 2s ease-in-out linkLevita;}
+.clickRevista{width: 8%; position: absolute; top: 70%; left: 12vh; animation: infinite alternate 2s ease-in-out linkLevita; z-index: 0;}
 @keyframes linkLevita {
     100%{transform: translateY(-2vh);}
 }
+footer{width: 100%;}
 
 @media screen and (max-width:1024px){
     .clickRevista{left: 2%;}
@@ -112,7 +114,7 @@ header{
     header{gap: 30%;}
 }
 
-@media screen and (max-width:720px){
+@media screen and (max-width:769px){
     header{gap: 1%;}
     .clickRevista{width: 12vh; left: 28vh; top: 68vh;}
     .headerFirst h3{font-size: 2.5vh;}
@@ -134,7 +136,7 @@ header{
     .logoFooter{width: 30vh;}
 }
 
-@media screen and (max-width:350px){
+@media screen and (max-width:376px){
     .sectionComic{height: 85vh;}
     .navegacion h1{font-size: 4vh;}
     .navegacion p{font-size: 2.5vh;}
@@ -148,4 +150,11 @@ header{
     .logoFooter{width: 20vh;}
     .sectionFooter{height: 65vh;}
     .itemFooterTwo img{width: 20vh; margin-left: 7vh;}
+}
+
+@media screen and (max-width:321px) {
+    .simuladorSpace{width: 80%;}
+    .headerFirst h3{font-size: 2vh;}
+    .navegacion p{font-size: 1.5vh;}
+    .navegacion{height: 70vh;}
 }
