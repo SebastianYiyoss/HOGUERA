@@ -113,26 +113,38 @@ header{
 }
 
 @media screen and (max-width:720px){
-    .navegacion{width: 90%;}
+    header{gap: 1%;}
+    .clickRevista{width: 12vh; left: 28vh; top: 68vh;}
+    .headerFirst h3{font-size: 2.5vh;}
+    .sectionComic h3{margin-top: 13vh;}
+    .navegacion{width: 80%; height: 80vh; top: 8vh;}
     .headerSecond h3{font-size: 1.5vh; display: none;}
-    .itemOneHeader h3{font-size: 1.5vh;}
     .headerSecond img{width: 100%;}
-    .headerSecond{width: 10%; height: 7vh;}
-    .itemOneHeader{width: 50%; height: 7vh;}
-    .sectionComic{height: 80vh; gap: 0%;}
+    .navegacion h1{font-size: 4vh;}
+    .navegacion p{font-size: 2.5vh;}
+    .headerSecond{width: 5%;}
+    .itemOneHeader{width: 80%; height: 7vh;}
+    .sectionComic{height: 100vh;}
     .simuladorSpace{width: 60vh; height: 40vh;}
-    .clickRevista{top: 65%; left: 45%;}
     .itemsFooter{flex-direction: column; justify-content: center; align-items: start; gap: 2vh;}
     .infoFooter{margin-bottom: 0; width: 80%;}
     .itemFooterTwo{margin-bottom: 0;}
-    .sectionFooter{height: 50vh;}
+    .sectionFooter{height: 62vh;}
     .itemFooterTwo img{width: 15vh;}
     .logoFooter{width: 30vh;}
 }
 
 @media screen and (max-width:350px){
+    .sectionComic{height: 85vh;}
+    .navegacion h1{font-size: 4vh;}
+    .navegacion p{font-size: 2.5vh;}
+    .clickRevista{width: 10vh; left: 24vh; top: 58vh;}
+    .sectionComic h3{margin-top: 13vh;}
+    header{gap: 1%;}
+    .itemOneHeader{width: 80%;}
+    .cerrarNav{width: 3vh;}
     .simuladorSpace{width: 50vh; height: 30vh;}
-    .navegacion{height: 90vh; top: 5%;}
+    .navegacion{height: 85vh; top: 5%;}
     .logoFooter{width: 20vh;}
     .sectionFooter{height: 65vh;}
     .itemFooterTwo img{width: 20vh; margin-left: 7vh;}
