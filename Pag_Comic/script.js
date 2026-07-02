@@ -231,6 +231,7 @@ puntoDos.addEventListener('click', function () {
 })
 
 /* Viñeta Numero 2 */
+desactivadorLlamada = 0
 function volverV1() {
     pasarViñeta.classList.remove('none')
     pasarViñeta.addEventListener('click', pasarV1)
@@ -361,9 +362,9 @@ function puntoAct() {
             puntBoca.classList.remove('puntoApa')
         }, 1000);
     }, 6500);
-    llamadaSal.volume = 0
-    llamadaSal.loop = false
+    llamadaSal.pause()
     contesta.play()
+    desactivadorLlamada++
 }
 function puntoActTwo() {
     text2.classList.add('none')
@@ -391,9 +392,12 @@ function pasarV1() {
     volverViñeta.classList.remove('none')
 
     estaticLamp.play()
-    llamadaSal.play()
     Llueve.pause()
 
+    if (desactivadorLlamada === 1) {
+    } else{
+        llamadaSal.play()
+    }
     if (contadorProgres === 1) {
     } else{
         pasarViñeta.classList.add('none')
