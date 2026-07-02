@@ -3,12 +3,6 @@ let headerSecond = document.getElementById('headerSecond')
 let blur = document.getElementById('blur')
 let header = document.querySelector('header')
 
-/* let abrirCarta = new Audio('./audios/AbrirHoja.mp3')
-let corcho = new Audio('./audios/Corcho.mp3')
-let cerrarCarta = new Audio('./audios/Cerrar.mp3')
-let ballenaGemido = new Audio('./audios/Ballena.mp3')
-let ballenaHabla = new Audio('./audios/BallenaTwo.mp3') */
-
 headerSecond.addEventListener('mouseover', contentListAct)
 function contentListAct() {
     contentList.classList.add('contentListAct')
@@ -163,7 +157,9 @@ function desactivarVioleta() {
     itemDocumentoSecreto.setAttribute('src', './imagenes/itemDocumentoSecreto.svg')
     imagenDatasAlim.setAttribute('src', './imagenes/datasAlim.png')
 }
+let textoVientosRaton = document.getElementById('textoVientosRaton')
 ratonViento.addEventListener('click', function () {
+    textoVientosRaton.classList.add('none')
     textoMorral.classList.add('none')
     itemRaton.classList.remove('none')
     ratonGrab.classList.add('zDex')

@@ -258,6 +258,11 @@ header{
     animation: viento infinite linear 20s;
     overflow: hidden;
 }
+.textoVientosRaton{width: 100%; text-align: center; font-family: calibriMarca;
+animation: infinite ease 1s alternate titiltextoraton;}
+@keyframes titiltextoraton {
+    100%{opacity: .5;}
+}
 .ratonGrab{position: fixed; width: 90vh; top: 20%;}
 @keyframes viento{100%{background-position: right;}}
 .sectionVientos img{position: absolute;}
@@ -466,7 +471,14 @@ header{
 }
 .globo9Viento{ /* raton */
     width: 7vh; top: 5%; right: -50%; cursor: pointer;
-    animation: globo9 infinite ease-in-out 38s;
+    animation: globo9 infinite ease-in-out 38s,
+    scaleGlobo infinite 1s alternate;
+    border-radius: 100vh;
+    padding: 2vh;
+}
+@keyframes scaleGlobo {
+    0%{box-shadow: 0 0 0 .3vh rgb(255, 172, 47);}
+    100%{}
 }
 @keyframes globo9{
     5.9%{top: 5%; right: -50%;}

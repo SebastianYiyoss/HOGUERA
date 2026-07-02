@@ -17,6 +17,7 @@ body{display: flex; flex-direction: column; align-items: center;}
 }
 .zDex{z-index: 4;}
 .none{display: none;}
+.flexD{display: flex;}
 
 header{
     margin-top: 2.5vh; display: flex; position: fixed;
@@ -75,12 +76,6 @@ header{
 }
 .sectionComic h3{font-family: 'franklinMarca'; text-align: center; margin-top: 10vh;}
 .sectionComic p{font-family: calibriMarca; margin-bottom: 4vh; color: gray;}
-.simuladorSpace{
-    width: 100vh; height: 60vh; background-color: black;
-    display: flex; justify-content: center; align-items: center;
-    border: solid .3vh; border-radius: 1vh; box-shadow: 0 0 1vh rgba(0, 0, 0, 0.13);
-}
-.simuladorSpace p{color: rgb(138, 138, 138);}
 
 .sectionFooter{
     pointer-events: none;
@@ -106,6 +101,301 @@ header{
     100%{transform: translateY(-2vh);}
 }
 footer{width: 100%;}
+.viñetas{width: 100%; display: flex; justify-content: center;}
+
+
+/* CODIGO DE VIÑETAS */
+
+/* Viñeta Numero 1 */
+.secViñetaOne{
+    width: 55%; margin: 0; padding: 0;
+    display: flex;
+    position: relative;
+    background-color: rgb(0, 0, 0);
+    border-radius: 1vh; overflow: hidden;
+    box-shadow: 0 0 2vh rgb(117, 117, 117);
+}
+.mouse{cursor: pointer;}
+.introRocas{
+    position: absolute; display: flex; object-fit: cover;
+    justify-content: center; align-items: center;
+    width: 100%; height: 100%;
+    color: rgba(0, 0, 0, 0.493);
+}
+.textEmpezar{
+    position: absolute;
+    color: gray; font-family: calibriMarca;
+    animation: titilTexto infinite ease .5s alternate;
+    opacity: 1;
+}
+@keyframes titilTexto {
+    100%{opacity: .5;}
+}
+.streak{
+    animation: forwards .1s ease streak;
+}
+@keyframes streak {
+    20%{transform: translateX( 2px);}
+    40%{transform: translateY(2px);}
+    60%{transform: translateX( -3px);}
+    80%{transform: translateY(-3px);}
+}
+.streak2{
+    animation: forwards .1s ease streak2;
+}
+@keyframes streak2 {
+    20%{transform: translateX( 4px);}
+    40%{transform: translateY(3px);}
+    60%{transform: translateX( -5px);}
+    80%{transform: translateY(-5px);}
+}
+.streak3{
+    animation: forwards .1s ease streak3;
+}
+@keyframes streak3 {
+    20%{transform: translateX( 5px);}
+    40%{transform: translateY(5px);}
+    60%{transform: translateX( -8px);}
+    80%{transform: translateY(-7px);}
+}
+.streak4{
+    animation: forwards .1s ease streak4;
+}
+@keyframes streak4 {
+    20%{transform: translateX( 6px);}
+    40%{transform: translateY(5px);}
+    60%{transform: translateX( -9px);}
+    80%{transform: translateY(-10px);}
+}
+.streak5{
+    animation: forwards .1s ease streak5;
+}
+@keyframes streak5 {
+    20%{transform: translateX( 8px);}
+    40%{transform: translateY(8px);}
+    60%{transform: translateX( -10px);}
+    80%{transform: translateY(-10px);}
+}
+.none{
+    display: none;
+}
+.desaparecer{
+    opacity: 1;
+    animation: desa 1s ease forwards;
+}
+@keyframes desa {
+    99%{opacity: 0; display: block;}
+    100%{opacity: 0; display: none;}
+}
+.lluvia{
+    width: 100%; height: 100%;
+    pointer-events: none;
+    position: absolute; opacity: .5;
+    background-image: url(./recursosV1/lluviaV1.png); background-position: bottom; background-repeat: no-repeat; background-size: cover;
+    animation: infinite lluviaCae 10s linear;
+}
+@keyframes lluviaCae {
+    100%{background-position: top;}
+}
+.oscurecer{
+    width: 100%; height: 100%;
+    position: absolute; opacity: 0;
+    background-color: black;
+    animation: infinite osc 30s ease;
+    pointer-events: none;
+    
+}
+@keyframes osc {
+    25%{opacity: 0;}
+    30%{opacity: .5;}
+    35%{opacity: 0;}
+    75%{opacity: 0;}
+    80%{opacity: .5;}
+    85%{opacity: 0;}
+}
+.Pint{
+    position: absolute; bottom: 18%; right: 30%;
+    width: 4%;
+    cursor: pointer;
+}
+.Cscann{
+    width: 100%; height: 100%;
+    position: absolute;
+}
+.gradAparece{animation: 1s forwards gradAp; opacity: 0;}
+@keyframes gradAp {
+    100%{opacity: 1;}
+}
+.gradDesaparece{animation: 1s forwards gradDes; opacity: 1;}
+@keyframes gradDes {
+    99%{display: block; opacity: 0;}
+    100%{display: none; opacity: 0;}
+}
+.emerg{
+    position: absolute;
+    width: 45%; top: 0; left: 27.1%;
+    animation: forwards ease 5s emergente;
+}
+@keyframes emergente {
+    0%{opacity: 0;}
+    5%{opacity: 1;}
+    95%{opacity: 1;}
+    100%{opacity: 0;}
+}
+.containerVentana{
+    width: 100%; height: 100%;
+    position: absolute; object-fit: cover;
+
+}
+.ventCerr{width: 100%;}
+.tbl1, .tbl2, .tbl3, .tbl4{position: absolute; transform-box: content-box; cursor: pointer;}
+.tbl1{width: 90%; top: 40%; left: 5%;}
+.tbl2{width: 27%; top: 5%; left: 38%;}
+.tbl3{width: 90%; top: 20%; left: 5%;}
+.tbl4{width: 90%; top: 7%; left: 5%;}
+.actVentanaCerr{
+    position: absolute; top: 52%; left: 35%; rotate: 15deg;
+    width: 12%;
+    height: 7%;
+    cursor: pointer;
+}
+.aniTabla{animation: forwards 2s animTabla ease;}
+@keyframes animTabla {
+    5%{rotate: 5deg;}
+    10%{rotate: -10deg; transform: translateY(0);}
+    15%{transform: translateY(-5%);}
+    95%{transform: translateY(500%); display: block;}
+    100%{transform: translateY(1000%); display: none;}
+}
+.PintTwo{
+    position: absolute;
+    width: 10%; top: 40%; left: 45%;
+    cursor: pointer;
+}
+.zoomVent{animation: forwards 10s zoomVent ease-out;}
+@keyframes zoomVent {
+    0%{scale: 100%;}
+    100%{scale: 400%;}
+}
+.animPints{animation: infinite puntoAn ease 4s alternate;}
+@keyframes puntoAn {
+    0%{opacity: .3;
+    scale: 100%;}
+    100%{opacity: 1;
+    scale: 110%;}
+}
+.Cventana{
+    width: 100%; height: 100%;
+    position: absolute;
+}
+.pasarViñetaTransition{
+    width: 55%; margin: 0; padding: 0;
+    height: 64%;
+    border-radius: 1vh; overflow: hidden;
+    box-shadow: 0 0 2vh rgb(117, 117, 117);
+    background-color: black;
+    position: absolute;
+}
+.pasarViñetaTransitionAct{animation: pasarViñeta forwards 4s linear;}
+@keyframes pasarViñeta {
+    0%{opacity: 0;} 50%{opacity: 1;} 99%{opacity: 0; display: block;} 100%{opacity: 0; display: none;}
+}
+
+/* Viñeta Numero 2 */
+.secViñetaTwo{
+    width: 55%; margin: 0; padding: 0;
+    position: relative;
+    background-color: rgb(0, 0, 0);
+    border-radius: 1vh; overflow: hidden;
+    box-shadow: 0 0 2vh rgb(117, 117, 117);
+}
+.viñetaSombra{
+    pointer-events: none;
+    width: 100%;
+}
+.viñetaSombra, .baldosa{position: absolute;}
+.baldosa{
+    width: 19%;
+    right: 15%; top: 15.5%;
+}
+.baldosaCae{animation: forwards 1s ease-in caeB;}
+@keyframes caeB {
+    40%{transform: translateY(-10%);}
+    100%{transform: translateY(450%) rotate(-70deg);}
+}
+.abrirDema{
+    cursor: pointer;
+    position: absolute;
+    top: 19%; left: 79%;
+    width: 3%; height: 15%; rotate: 25deg;
+}
+.demandaCont{
+    position: absolute;
+    width: 100%;
+}
+.demanda{width: 100%;}
+.cerrarDema{
+    cursor: pointer;
+    position: absolute;
+    top: 8%; left: 65%;
+    width: 3%; height: 6%;
+}
+.blurV2{filter: blur(.5vh); transition: ease .5s;}
+.blurDes{filter: blur(0vh); transition: ease .5s;}
+.demandaApar{animation: forwards .5s ease demAp;}
+@keyframes demAp {
+    0%{scale: 0;}
+    100%{scale: 100%;}
+}
+.demandaDesa{animation: forwards .5s ease demDe;}
+@keyframes demDe {
+    0%{scale: 100%;}
+    100%{scale: 0;}
+}
+.BocaOne{
+    width: 30%;
+    position: absolute;
+    top: 40%; left: 20%;
+}
+.BocaTwo{
+    width: 30%;
+    position: absolute;
+    top: 40%; left: 20%;
+}
+.animPints{animation: infinite puntoAn ease 2s alternate;}
+@keyframes puntoAn {
+    0%{opacity: .3;
+    scale: 100%;}
+    100%{opacity: 1;
+    scale: 110%;}
+}
+.puntoDint{
+    cursor: pointer;
+    position: absolute;
+    top: 46%; left: 32%;
+    width: 7%;
+}
+.puntoDes{
+    animation: pDes forwards .5s ease;
+}
+@keyframes pDes {
+    100%{opacity: 0; scale: 0;}
+}
+.puntoApa{
+    animation: pApa forwards .5s ease; opacity: 0; scale: 0;
+}
+@keyframes pApa {
+    100%{opacity: 1; scale: 100%;}
+}
+.conversacion{
+    position: absolute;
+    width: 100%;
+    bottom: 0; left: 0;
+    display: flex; justify-content: center; align-items: center;
+}
+.t1, .t2, .t3, .t4{width: 100%;}
+
+
 
 @media screen and (max-width:1024px){
     .clickRevista{left: 2%;}
@@ -127,7 +417,6 @@ footer{width: 100%;}
     .headerSecond{width: 5%;}
     .itemOneHeader{width: 80%; height: 7vh;}
     .sectionComic{height: 100vh;}
-    .simuladorSpace{width: 60vh; height: 40vh;}
     .itemsFooter{flex-direction: column; justify-content: center; align-items: start; gap: 2vh;}
     .infoFooter{margin-bottom: 0; width: 80%;}
     .itemFooterTwo{margin-bottom: 0;}
@@ -145,7 +434,6 @@ footer{width: 100%;}
     header{gap: 1%;}
     .itemOneHeader{width: 80%;}
     .cerrarNav{width: 3vh;}
-    .simuladorSpace{width: 50vh; height: 30vh;}
     .navegacion{height: 85vh; top: 5%;}
     .logoFooter{width: 20vh;}
     .sectionFooter{height: 65vh;}
@@ -153,7 +441,6 @@ footer{width: 100%;}
 }
 
 @media screen and (max-width:321px) {
-    .simuladorSpace{width: 80%;}
     .headerFirst h3{font-size: 2vh;}
     .navegacion p{font-size: 1.5vh;}
     .navegacion{height: 70vh;}
