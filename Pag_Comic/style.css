@@ -397,14 +397,14 @@ footer{width: 100%;}
 
 
 
-@media screen and (max-width:1024px){
+@media (max-width:1024px){
     .clickRevista{left: 2%;}
     .headerSecond{width: 20%;}
     .itemOneHeader{width: 40%;}
     header{gap: 30%;}
 }
 
-@media screen and (max-width:769px){
+@media (max-width:769px){
     header{gap: 1%;}
     .clickRevista{width: 12vh; left: 28vh; top: 68vh;}
     .headerFirst h3{font-size: 2.5vh;}
@@ -425,7 +425,7 @@ footer{width: 100%;}
     .logoFooter{width: 30vh;}
 }
 
-@media screen and (max-width:376px){
+@media (max-width:376px){
     .sectionComic{height: 85vh;}
     .navegacion h1{font-size: 4vh;}
     .navegacion p{font-size: 2.5vh;}
@@ -440,7 +440,7 @@ footer{width: 100%;}
     .itemFooterTwo img{width: 20vh; margin-left: 7vh;}
 }
 
-@media screen and (max-width:321px) {
+@media (max-width:321px) {
     .headerFirst h3{font-size: 2vh;}
     .navegacion p{font-size: 1.5vh;}
     .navegacion{height: 70vh;}
