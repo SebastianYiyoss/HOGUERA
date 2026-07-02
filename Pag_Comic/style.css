@@ -102,13 +102,24 @@ header{
 }
 footer{width: 100%;}
 .viñetas{width: 100%; display: flex; justify-content: center;}
-
+.volverViñeta{
+    position: absolute; width: 2%;
+    top: 79%; left: 19%; cursor: pointer;
+    transition: ease .5s;
+}
+.volverViñeta:hover{transition: ease .5s; scale: 105%; opacity: .6;}
+.pasarViñeta{
+    position: absolute; width: 2%;
+    top: 79%; right: 19%; cursor: pointer;
+    transition: ease .5s;
+}
+.pasarViñeta:hover{transition: ease .5s; scale: 105%; opacity: .6;}
 
 /* CODIGO DE VIÑETAS */
-
+.anchoViñetas{width: 55%;}
 /* Viñeta Numero 1 */
 .secViñetaOne{
-    width: 55%; margin: 0; padding: 0;
+    margin: 0; padding: 0;
     display: flex;
     position: relative;
     background-color: rgb(0, 0, 0);
@@ -303,7 +314,7 @@ footer{width: 100%;}
 
 /* Viñeta Numero 2 */
 .secViñetaTwo{
-    width: 55%; margin: 0; padding: 0;
+    margin: 0; padding: 0;
     position: relative;
     background-color: rgb(0, 0, 0);
     border-radius: 1vh; overflow: hidden;
@@ -412,8 +423,8 @@ footer{width: 100%;}
     .navegacion{width: 80%; height: 80vh; top: 8vh;}
     .headerSecond h3{font-size: 1.5vh; display: none;}
     .headerSecond img{width: 100%;}
-    .navegacion h1{font-size: 4vh;}
-    .navegacion p{font-size: 2.5vh;}
+    .navegacion h1{font-size: 30px;}
+    .navegacion p{font-size: 15px;}
     .headerSecond{width: 5%;}
     .itemOneHeader{width: 80%; height: 7vh;}
     .sectionComic{height: 100vh;}
@@ -423,11 +434,15 @@ footer{width: 100%;}
     .sectionFooter{height: 62vh;}
     .itemFooterTwo img{width: 15vh;}
     .logoFooter{width: 30vh;}
+    .anchoViñetas{width: 80%;}
+    .volverViñeta, .pasarViñeta{width: 8%; top: 55%;}
 }
 
 @media (max-width:376px){
+    .anchoViñetas{width: 90%;}
     .sectionFooter{height: max-content; display: flex;}
     .sectionComic{height: 85vh;}
+    .itemNav img{width: 10%;}
     .navegacion h1{font-size: 25px;}
     .navegacion p{font-size: 12px;}
     .clickRevista{width: 10vh; left: 24vh; top: 58vh;}
@@ -435,14 +450,10 @@ footer{width: 100%;}
     header{gap: 1%;}
     .itemOneHeader{width: 80%;}
     .cerrarNav{width: 6%;}
-    .navegacion{height: 75vh; top: 5%;}
+    .navegacion{height: max-content; padding-top: 15%; padding-bottom: 3vh; top: 5%;}
     .logoFooter{width: 20%;}
     .itemFooterTwo img{width: 170%;}
     .itemFooterTwo img{width: 170%;}
     .itemFooter{font-size: 12px;}
     .infoFooter{font-size: 10px;}
-}
-
-@media (max-width:321px) {
-    .headerFirst h3{font-size: 2vh;}
 }

@@ -41,8 +41,12 @@
             <p>Signo de interacción, indica dónde hay una interacción extra.</p>
         </div>
         <div class="itemNav">
-            <img src="./imagenes/flechaAtras.svg" alt="">
+            <img src="./imagenes/volverviñeta.svg" alt="">
             <p>Atrás, este icono regresa a la viñeta anterior del comic.</p>
+        </div>
+        <div class="itemNav">
+            <img src="./imagenes/pasarviñeta.svg" alt="">
+            <p>Pasar, este icono pasa a la viñeta siguiente del comic.</p>
         </div>
         <p class="textoNav"><em>(Hay interacciones secretas, <strong>NO</strong> son necesarias, solo aportan datos
                 extras en la historia)</em></p>
@@ -57,10 +61,11 @@
 
         <!-- VIÑETAS -->
         <div class="viñetas">
-
+            <img class="volverViñeta none" id="volverViñeta" src="./imagenes/volverviñeta.svg" alt="">
+            <img class="pasarViñeta none" id="pasarViñeta" src="./imagenes/pasarviñeta.svg" alt="">
 
             <!-- viñeta 1 -->
-            <section class="secViñetaOne mouse" id="V1V1">
+            <section class="secViñetaOne mouse anchoViñetas" id="V1V1">
                 <img class="vñt" src="./recursosV1/ViñetaTwo - Int.svg" alt="">
                 <div class="lluvia"></div>
                 <img class="Pint animPints" src="./recursosV1/PuntoDint.png" alt="">
@@ -93,7 +98,8 @@
             </section>
 
             <!-- viñeta 2 -->
-            <section class="none secViñetaTwo" id="V2V2">
+            <section class="none secViñetaTwo anchoViñetas" id="V2V2">
+                
                 <img class="viñetaInt" src="./recursosV2/ViñetaInt - Two.svg" alt="">
                 <div class="abrirDema"></div>
                 <img class="baldosa pointer" id="baldosa" src="./recursosV2/Baldosa.png" alt="">
@@ -117,7 +123,6 @@
                 <img class="viñetaSombra" src="./recursosV2/Viñeta.png" alt="">
             </section>
 
-            <div class="none pasarViñetaTransition" id="pasarViñetaTransitionN1"></div>
 
         </div>
 

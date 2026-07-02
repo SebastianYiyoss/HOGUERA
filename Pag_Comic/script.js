@@ -22,6 +22,10 @@ const clickRevista = lottie.loadAnimation({
     path: 'clips/libro/clickRevista.json'
 })
 
+let volverViñeta = document.getElementById('volverViñeta')
+let pasarViñeta = document.getElementById('pasarViñeta')
+let contadorProgres = 0
+
 /* CODIGO DE VIÑETAS */
 
 /* Viñeta Numero 1 */
@@ -132,17 +136,13 @@ function actScann() {
         Camera.volume = 0.5
     }, 1000);
     setTimeout(() => {
-        pasarViñetaTransitionN1.classList.remove('none')
-        pasarViñetaTransitionN1.classList.add('pasarViñetaTransitionAct')
-        setTimeout(() => {
-            V1V1.classList.add('none')
-            V2V2.classList.remove('none')
-            V2V2.classList.add('flexD')
-            Llueve.loop = false
-            Llueve.volume = 0
-            Llueve.stop()
-        }, 2000);
-    }, 3000);
+        volverViñeta.classList.remove('none')
+        volverViñeta.addEventListener('click', volverV1)
+        V1V1.classList.add('none')
+        V2V2.classList.remove('none')
+        V2V2.classList.add('flexD')
+        Llueve.pause()
+    }, 3500);
 }
 let contVcerr = document.querySelector('.containerVentana')
 let ventCerr = document.querySelector('.ventCerr')
@@ -231,6 +231,20 @@ puntoDos.addEventListener('click', function () {
 })
 
 /* Viñeta Numero 2 */
+function volverV1() {
+    pasarViñeta.classList.remove('none')
+    pasarViñeta.addEventListener('click', pasarV1)
+    V1V1.classList.remove('none')
+    V2V2.classList.add('none')
+    V2V2.classList.remove('flexD')
+    volverViñeta.classList.add('none')
+    volverViñeta.removeEventListener('click', volverV1)
+
+    estaticLamp.pause()
+    llamadaSal.pause()
+    Llueve.play()
+}
+
 let V2V2 = document.getElementById('V2V2')
 let baldosa = document.querySelector('.baldosa')
 let abrirDema = document.querySelector('.abrirDema')
@@ -362,6 +376,26 @@ function puntoActTwo() {
         text4.classList.remove('none')
         setTimeout(() => {
             text4.classList.add('none')
+            contadorProgres++
+            pasarViñeta.classList.remove('none')
+            pasarViñeta.addEventListener('click', pasarV2)
         }, 4000);
     }, 5000);
+}
+function pasarV1() {
+    volverViñeta.addEventListener('click', volverV1)
+    pasarViñeta.removeEventListener('click', pasarV1)
+    V1V1.classList.add('none')
+    V2V2.classList.remove('none')
+    V2V2.classList.add('flexD')
+    volverViñeta.classList.remove('none')
+
+    estaticLamp.play()
+    llamadaSal.play()
+    Llueve.pause()
+
+    if (contadorProgres === 1) {
+    } else{
+        pasarViñeta.classList.add('none')
+    }
 }
