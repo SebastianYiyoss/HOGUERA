@@ -1013,7 +1013,7 @@ footer{
     .itemFooter{font-size: 12px;}
     .infoFooter{font-size: 10px;}
     .sectionComic h1{margin-bottom: 0vh;}
-    .sectionComic{height: 130vh; background-position: 5%;}
+    .sectionComic{height: 130vh; background-position: 9%;}
     .datasComic{top: 65vh;}
     .containerDatasComic{width: 75%; height: 40vh;}
     .sliderPosters{width: 100%; height: 40vh;}
@@ -1069,14 +1069,10 @@ footer{
     .cerrarDatas{width: 4vh; top: 3%;}
     .fichaDatas{width: 90%;}
     .selectCajaFuerte{left: 27vh;}
-    .sectionComic{height: 120vh;}
-    .datasComic{margin-top: -14vh; height: 30vh;}
-    .datasComic p{font-size: 9px;}
-    .sliderPosters{height: 27vh;}
-    .containerDatasComic{height: 30vh;}
+    .sectionComic{height: 130vh;}
     .focaViento{width: 25vh;}
     .sectionTeaser video{width: 90%; height: 25vh;}
-    .sectionIntroduccion p{font-size: 1.5vh;}
+    .sectionIntroduccion p{font-size: 12px;}
     .headerFirst{width: 60%; height: 3vh; padding: 1.5vh;}
     header{height: 5vh; top: 1.5vh;}
     .contentList{top: 11vh;}
