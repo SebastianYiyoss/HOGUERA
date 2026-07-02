@@ -407,7 +407,7 @@ footer{width: 100%;}
 @media (max-width:769px){
     header{gap: 1%;}
     .clickRevista{width: 12vh; left: 28vh; top: 68vh;}
-    .headerFirst h3{font-size: 2.5vh;}
+    .headerFirst h3{font-size: 13px;}
     .sectionComic h3{margin-top: 13vh;}
     .navegacion{width: 80%; height: 80vh; top: 8vh;}
     .headerSecond h3{font-size: 1.5vh; display: none;}
@@ -426,18 +426,21 @@ footer{width: 100%;}
 }
 
 @media (max-width:376px){
+    .sectionFooter{height: max-content; display: flex;}
     .sectionComic{height: 85vh;}
-    .navegacion h1{font-size: 4vh;}
-    .navegacion p{font-size: 2.5vh;}
+    .navegacion h1{font-size: 25px;}
+    .navegacion p{font-size: 12px;}
     .clickRevista{width: 10vh; left: 24vh; top: 58vh;}
     .sectionComic h3{margin-top: 13vh;}
     header{gap: 1%;}
     .itemOneHeader{width: 80%;}
-    .cerrarNav{width: 3vh;}
-    .navegacion{height: 85vh; top: 5%;}
-    .logoFooter{width: 20vh;}
-    .sectionFooter{height: 65vh;}
-    .itemFooterTwo img{width: 20vh; margin-left: 7vh;}
+    .cerrarNav{width: 6%;}
+    .navegacion{height: 75vh; top: 5%;}
+    .logoFooter{width: 20%;}
+    .itemFooterTwo img{width: 170%;}
+    .itemFooterTwo img{width: 170%;}
+    .itemFooter{font-size: 12px;}
+    .infoFooter{font-size: 10px;}
 }
 
 @media (max-width:321px) {
