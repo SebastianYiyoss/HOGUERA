@@ -995,6 +995,7 @@ footer{
 }
 
 @media screen and (max-width:427px){
+    .selectCajaFuerte{left: 45%;}
     .personajesMovile{gap: 3vh; margin-top: 5vh;}
     .filaPersonajes{gap: 1vh;}
     .itemPichBookDow{height: 2vh; margin-top: 3vh;}
