@@ -435,10 +435,10 @@ footer{width: 100%;}
     .itemFooterTwo img{width: 15vh;}
     .logoFooter{width: 30vh;}
     .anchoViñetas{width: 80%;}
-    .volverViñeta, .pasarViñeta{width: 8%; top: 55%;}
 }
 
-@media (max-width:376px){
+@media (max-width:470px){
+    .volverViñeta, .pasarViñeta{width: 8%; top: 55%;}
     .anchoViñetas{width: 90%;}
     .sectionFooter{height: max-content; display: flex;}
     .sectionComic{height: 85vh;}
@@ -456,4 +456,9 @@ footer{width: 100%;}
     .itemFooterTwo img{width: 170%;}
     .itemFooter{font-size: 12px;}
     .infoFooter{font-size: 10px;}
+}
+@media (max-width:325px){
+    .clickRevista{width: 8vh; top: 50%;}
+    .sectionComic{height: 70vh;}
+    .volverViñeta, .pasarViñeta{width: 8%; top: 50%;}
 }
