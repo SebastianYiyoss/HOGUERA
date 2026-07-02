@@ -335,7 +335,7 @@ let bocaTwo = lottie.loadAnimation({
     render: 'svg',
     loop: false,
     autoplay: false,
-    path: 'recursosV2/BocaTwo/boca2.json'
+    path: 'recursosV2/BocaTwo/Boca2.json'
 })
 let puntBoca = document.querySelector('.puntoDint')
 puntBoca.addEventListener('click', puntoAct)
