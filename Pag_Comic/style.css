@@ -407,6 +407,34 @@ footer{width: 100%;}
 .t1, .t2, .t3, .t4{width: 100%;}
 
 
+/* Viñeta Numero 3 */
+.secViñetaThree{
+    margin: 0; padding: 0;
+    position: relative;
+    background-color: rgb(0, 0, 0);
+    border-radius: 1vh; overflow: hidden;
+    box-shadow: 0 0 2vh rgb(117, 117, 117);
+}
+.pint3{width: 6%; position: absolute; z-index: 1; top: 30%; right: 15%;}
+.pint4{width: 6%; position: absolute; z-index: 1; top: 70%; right: 45%;}
+.bocaKyle1{position: absolute; width: 3.4%; top: 52.15%; left: 60.5%;}
+.texto1V3{position: absolute; width: 45%; top: 10%; right: 25%;}
+.texto2V3{position: absolute; width: 14%; top: 25%; right: 31%;}
+.pantallaKyle{width: 100%;}
+.entrada, .borrador, .aceptarInv{position: absolute; cursor: pointer;}
+.entrada, .borrador{width: 14.5%; left: 3.1%;}
+.entrada{top: 12.7%;}
+.borrador{top: 18.8%;}
+.aceptarInv{width: 15%; top: 75%; right: 10%;}
+.ventanaEmergV3{position: absolute; width: 50%; top: 0; left: 25%; z-index: 1;}
+.apareceEmerg{animation: apareceEmerg forwards ease 6s;}
+@keyframes apareceEmerg {
+    0%{opacity: 0;}
+    20%{opacity: 1;}
+    80%{opacity: 1;}
+    100%{opacity: 0;}
+}
+
 
 @media (max-width:1024px){
     .clickRevista{left: 2%;}

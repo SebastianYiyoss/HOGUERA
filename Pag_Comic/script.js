@@ -240,6 +240,7 @@ function volverV1() {
     V2V2.classList.remove('flexD')
     volverViñeta.classList.add('none')
     volverViñeta.removeEventListener('click', volverV1)
+    pasarViñeta.removeEventListener('click', pasarV2)
 
     estaticLamp.pause()
     llamadaSal.pause()
@@ -391,6 +392,8 @@ function pasarV1() {
     V2V2.classList.add('flexD')
     volverViñeta.classList.remove('none')
 
+    pasarViñeta.addEventListener('click', pasarV2)
+
     estaticLamp.play()
     Llueve.pause()
 
@@ -403,3 +406,111 @@ function pasarV1() {
         pasarViñeta.classList.add('none')
     }
 }
+
+/* Viñeta Numero 3 */
+let click = new Audio('./recursosV3/click.mp3')
+let arcade = new Audio('./recursosV3/Arcade.mp3')
+
+function pasarV2() {
+    V3V3.classList.remove('none')
+    V2V2.classList.add('none')
+
+    volverViñeta.removeEventListener('click', volverV1)
+    volverViñeta.addEventListener('click', volverV2)
+
+    pasarViñeta.removeEventListener('click', pasarV2)
+    ventanaEmergV3.classList.add('apareceEmerg')
+
+    estaticLamp.pause()
+    
+    if (pararArcade === 1) {
+        arcade.pause()
+    } else{
+        arcade.play()
+    }
+
+    if (contadorProgres === 2) {
+    } else{
+        pasarViñeta.classList.add('none')
+    }
+}
+function volverV2() {
+    V3V3.classList.add('none')
+    V2V2.classList.remove('none')
+
+    volverViñeta.addEventListener('click', volverV1)
+    volverViñeta.removeEventListener('click', volverV2)
+
+    pasarViñeta.addEventListener('click', pasarV2)
+    pasarViñeta.classList.remove('none')
+
+    estaticLamp.play()
+    arcade.pause()
+}
+
+let pararArcade = 0
+let V3V3 = document.getElementById('secViñetaThree')
+let habitKyleP1 = lottie.loadAnimation({
+    container: document.getElementById('habitKyleP1'),
+    render: 'svg',
+    loop: true,
+    autoplay: true,
+    path: 'recursosV3/HabitacionKyle/HabitacionKyle.json'
+})
+let habitKyleP1P1 = document.getElementById('habitKyleP1P1')
+let habitKyleP2 = lottie.loadAnimation({
+    container: document.getElementById('habitKyleP2'),
+    render: 'svg',
+    loop: true,
+    autoplay: true,
+    path: 'recursosV3/HabitacionKyle2/HabitacionKyle2.json'
+})
+let habitKyleP2P2 = document.getElementById('habitKyleP2P2')
+let habitKyleP3 = document.getElementById('habitKyleP3')
+let bocaKyle1 = document.getElementById('bocaKyle1')
+let pint3 = document.getElementById('pint3')
+let pint4 = document.getElementById('pint4')
+let texto1V3 = document.getElementById('texto1V3')
+let texto2V3 = document.getElementById('texto2V3')
+
+pint3.addEventListener('click', function () {
+    pint3.classList.add('none')
+    texto1V3.classList.remove('none')
+    setTimeout(() => {
+        texto1V3.classList.add('none')
+        texto2V3.classList.remove('none')
+        bocaKyle1.classList.remove('none')
+        setTimeout(() => {
+            texto2V3.classList.add('none')
+            bocaKyle1.classList.add('none')
+            setTimeout(() => {
+                habitKyleP1P1.classList.add('none')
+                habitKyleP2P2.classList.remove('none')
+                pint4.classList.remove('none')
+                pararArcade++
+                arcade.pause()
+            }, 2000);
+        }, 2000);
+    }, 7500);
+})
+
+let ventanaEmergV3 = document.getElementById('ventanaEmergV3')
+let pantallaKyle = document.getElementById('pantallaKyle')
+let imagenPantalla = document.getElementById('imagenPantalla')
+let aceptarInv = document.getElementById('aceptarInv')
+
+let entrada = document.getElementById('entrada').addEventListener('click', function () {
+    imagenPantalla.setAttribute('src', './recursosV3/pantallaKyle.svg')
+    aceptarInv.classList.remove('none')
+})
+let borrador = document.getElementById('borrador').addEventListener('click', function () {
+    imagenPantalla.setAttribute('src', './recursosV3/pantallaKyle2.svg')
+    aceptarInv.classList.add('none')
+})
+
+pint4.addEventListener('click', function () {
+    pint4.classList.add('none')
+    habitKyleP2P2.classList.add('none')
+    pantallaKyle.classList.remove('none')
+    click.play()
+})
