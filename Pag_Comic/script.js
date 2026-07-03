@@ -422,6 +422,8 @@ function pasarV2() {
     ventanaEmergV3.classList.add('apareceEmerg')
 
     estaticLamp.pause()
+    llamadaSal.pause()
+    arcade.volume = 0.1
     
     if (pararArcade === 1) {
         arcade.pause()
