@@ -142,6 +142,11 @@ function actScann() {
         V2V2.classList.remove('none')
         V2V2.classList.add('flexD')
         Llueve.pause()
+        estaticLamp.play()
+        estaticLamp.loop = true
+        llamadaSal.play()
+        llamadaSal.volume = 0.1
+        llamadaSal.loop = true
     }, 3500);
 }
 let contVcerr = document.querySelector('.containerVentana')
@@ -267,16 +272,6 @@ let contesta = new Audio('./recursosV2/Contesta .mp3')
 let estaticLamp = new Audio('./recursosV2/Lampara.mp3')
 let llamadaSal = new Audio('./recursosV2/Llamada.mp3')
 
-viñetaIntTwo.addEventListener('mouseover', actSound)
-function actSound() {
-    estaticLamp.play()
-    estaticLamp.loop = true
-    llamadaSal.play()
-    llamadaSal.volume = 0.1
-    llamadaSal.loop = true
-    viñetaIntTwo.removeEventListener('mouseover', actSound)
-}
-
 baldosa.addEventListener('click', baldCae)
 function baldCae() {
     baldosa.classList.add('baldosaCae')
@@ -401,7 +396,7 @@ function pasarV1() {
     } else{
         llamadaSal.play()
     }
-    if (contadorProgres === 1) {
+    if (contadorProgres >= 1) {
     } else{
         pasarViñeta.classList.add('none')
     }
@@ -419,6 +414,7 @@ function pasarV2() {
     volverViñeta.addEventListener('click', volverV2)
 
     pasarViñeta.removeEventListener('click', pasarV2)
+    pasarViñeta.addEventListener('click', pasarV3)
     ventanaEmergV3.classList.add('apareceEmerg')
 
     estaticLamp.pause()
@@ -431,7 +427,8 @@ function pasarV2() {
         arcade.play()
     }
 
-    if (contadorProgres === 2) {
+    if (contadorProgres >= 2) {
+        pasarViñeta.classList.remove('none')
     } else{
         pasarViñeta.classList.add('none')
     }
@@ -444,6 +441,7 @@ function volverV2() {
     volverViñeta.removeEventListener('click', volverV2)
 
     pasarViñeta.addEventListener('click', pasarV2)
+    pasarViñeta.removeEventListener('click', pasarV3)
     pasarViñeta.classList.remove('none')
 
     estaticLamp.play()
@@ -504,10 +502,12 @@ let aceptarInv = document.getElementById('aceptarInv')
 let entrada = document.getElementById('entrada').addEventListener('click', function () {
     imagenPantalla.setAttribute('src', './recursosV3/pantallaKyle.svg')
     aceptarInv.classList.remove('none')
+    click.play()
 })
 let borrador = document.getElementById('borrador').addEventListener('click', function () {
     imagenPantalla.setAttribute('src', './recursosV3/pantallaKyle2.svg')
     aceptarInv.classList.add('none')
+    click.play()
 })
 
 pint4.addEventListener('click', function () {
@@ -515,4 +515,104 @@ pint4.addEventListener('click', function () {
     habitKyleP2P2.classList.add('none')
     pantallaKyle.classList.remove('none')
     click.play()
+})
+aceptarInv.addEventListener('click', function () {
+    habitKyleP3.classList.remove('none')
+    V3V3.classList.add('none')
+    V4V4.classList.remove('none')
+    click.play()
+
+    volverViñeta.addEventListener('click', volverV3)
+    volverViñeta.removeEventListener('click', volverV2)
+    contadorProgres++
+
+    pasarViñeta.addEventListener('click', pasarV3)
+    ventanaEmergV4.classList.add('apareceEmerg')
+    jazz.play()
+    jazz.loop = true
+    jazz.volume = 0.1
+
+    setTimeout(() => {
+        salaJimbo.play()
+        salaJimbo.loop = true
+        pint5.classList.remove('none')
+        ring.play()
+        ring.loop = true
+        ring.volume = 0.2
+    }, 2000);
+})
+
+/* Viñeta Numero 4 */
+let detenerRing = 0
+let ring = new Audio('./recursosV4/ring.mp3')
+let jazz = new Audio('./recursosV4/jazz.mp3')
+function pasarV3() {
+    V3V3.classList.add('none')
+    V4V4.classList.remove('none')
+
+    volverViñeta.addEventListener('click', volverV3)
+    volverViñeta.removeEventListener('click', volverV2)
+    jazz.play()
+
+    if (detenerRing === 1) {
+        ring.pause()
+    } else{
+        ring.play()
+    }
+
+    if (contadorProgres === 3) {
+        pasarViñeta.classList.remove('none')
+    } else{
+        pasarViñeta.classList.add('none')
+    }
+}
+function volverV3() {
+    ring.pause()
+    jazz.pause()
+
+    V3V3.classList.remove('none')
+    V4V4.classList.add('none')
+
+    volverViñeta.removeEventListener('click', volverV3)
+    volverViñeta.addEventListener('click', volverV2)
+
+    pasarViñeta.addEventListener('click', pasarV3)
+    pasarViñeta.classList.remove('none')
+}
+
+let V4V4 = document.getElementById('V4V4')
+let salaJimbo = lottie.loadAnimation({
+    container: document.getElementById('salaJimbo'),
+    render: 'svg',
+    loop: false,
+    autoplay: false,
+    path: 'recursosV4/salaJimbo/salaJimbo.json'
+})
+let salaJimbo2 = lottie.loadAnimation({
+    container: document.getElementById('salaJimbo2'),
+    render: 'svg',
+    loop: false,
+    autoplay: false,
+    path: 'recursosV4/salaJimbo2/salaJimbo2.json'
+})
+let sala1Jimbo = document.getElementById('sala1Jimbo')
+let sala2Jimbo = document.getElementById('sala2Jimbo')
+let pint5 = document.getElementById('pint5')
+let telefonoEmergV4 = document.getElementById('telefonoEmergV4')
+let ventanaEmergV4 = document.getElementById('ventanaEmergV4')
+pint5.addEventListener('click', function () {
+    sala1Jimbo.classList.add('none')
+    sala2Jimbo.classList.remove('none')
+    salaJimbo2.play()
+    pint5.classList.add('none')
+    ring.pause()
+    detenerRing++
+    setTimeout(() => {
+        telefonoEmergV4.classList.remove('none')
+        setTimeout(() => {
+            salaJimbo2.setDirection(-1)
+            salaJimbo2.play()
+            telefonoEmergV4.classList.add('none')
+        }, 6000);
+    }, 1400);
 })
